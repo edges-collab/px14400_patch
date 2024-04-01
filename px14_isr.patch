@@ -1,0 +1,19 @@
+7a8
+> 
+11a13
+> #if LINUX_VERSION_CODE < KERNEL_VERSION(5,4,251)
+12a15,17
+> #else
+> DECLARE_TASKLET_OLD(px14_bh, _px14_bh_tasklet);
+> #endif
+106c111,112
+< void _px14_bh_tasklet (u_long unused)
+---
+>   
+> void _px14_bh_tasklet ( u_long unused )
+109d114
+< 
+111c116
+< 
+---
+>    

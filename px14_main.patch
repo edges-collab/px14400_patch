@@ -1,0 +1,19 @@
+52c52
+< #  else
+---
+> #  elif LINUX_VERSION_CODE < KERNEL_VERSION(5,6,0)
+54a55,57
+> #  else 
+>    static struct proc_ops g_popsPX14;
+>    static ssize_t px14_read_proc (struct file *filp, char *buf, size_t count, loff_t *offp);
+80a84
+> #if LINUX_VERSION_CODE < KERNEL_VERSION(5,12,0)
+81a86
+> #endif
+126c131,134
+< #  if LINUX_VERSION_CODE >= KERNEL_VERSION(3,10,0)
+---
+> #  if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
+>    memset (&g_popsPX14, 0, sizeof(struct proc_ops));
+>    g_popsPX14.proc_read = px14_read_proc;
+> #  elif LINUX_VERSION_CODE >= KERNEL_VERSION(3,10,0)
