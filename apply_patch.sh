@@ -29,11 +29,14 @@ if [ -z "$px_path" ]; then
   exit 1
 fi
 
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+
 echo "Applying patch to $px_path/driver/px14_main.c..."
-patch -b -d $px_path/driver px14_main.c $cur_path/px14_main.patch 
+patch -b -d $px_path/driver px14_main.c $script_path/px14_main.patch 
 
 echo "Applying patch to $px_path/driver/px14_isr.c..."
-patch -b -d $px_path/driver px14_isr.c $cur_path/px14_isr.patch 
+patch -b -d $px_path/driver px14_isr.c $script_path/px14_isr.patch 
 
 echo "Done."
 
