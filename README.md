@@ -6,7 +6,7 @@ The original drivers provided by Vitrek are available at: https://vitrek.com/sig
 
 To apply the patch:
 
-1. Download the original drivers from Vitrek
+1. Download and unzip the original drivers from Vitrek
 2. Download this git reposority
 3. cd into this folder
 4. Run ./apply_patch.sh -p /path/to/PX14400/driver/source/directory
